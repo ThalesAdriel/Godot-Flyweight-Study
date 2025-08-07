@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 const MENU = ("res://Scenes/menu.tscn")
 

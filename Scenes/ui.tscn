@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbsabc3n773r0"]
+[gd_scene load_steps=6 format=3 uid="uid://bbsabc3n773r0"]
 
 [ext_resource type="Script" uid="uid://byk7p8y0etgf2" path="res://Scripts/exit.gd" id="1_jxero"]
 [ext_resource type="Script" uid="uid://ctl3gh1bgb4yc" path="res://Scripts/ui.gd" id="1_qdvrb"]
+[ext_resource type="Texture2D" uid="uid://bvl502bimt7il" path="res://Textures/Group 1.svg" id="2_2246s"]
 [ext_resource type="Theme" uid="uid://ot3iqkyfukxx" path="res://Textures/theme.tres" id="3_nf4gj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2246s"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_qdvrb")
@@ -12,15 +15,19 @@ offset_left = 11.0
 offset_top = 14.0
 offset_right = 51.0
 offset_bottom = 54.0
+scale = Vector2(0.7, 0.7)
+theme_override_styles/panel = SubResource("StyleBoxTexture_2246s")
 
-[node name="Button" type="Button" parent="Exit"]
+[node name="Button" type="TextureButton" parent="Exit"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 40.0
+offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Exit"
+texture_normal = ExtResource("2_2246s")
 script = ExtResource("1_jxero")
 
 [node name="Panel" type="Panel" parent="."]
@@ -28,8 +35,8 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -120.0
-offset_right = -120.0
+offset_left = -140.0
+offset_right = -140.0
 offset_bottom = -340.0
 grow_horizontal = 0
 grow_vertical = 2
