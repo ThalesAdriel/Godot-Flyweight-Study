@@ -9,10 +9,10 @@
 
 [node name="Main" type="Node2D" parent="."]
 
+[node name="Env" parent="Main" instance=ExtResource("4_8wjh8")]
+
 [node name="Player" parent="Main" instance=ExtResource("2_lvhrh")]
 
 [node name="GunOptimized" parent="Main/Player" instance=ExtResource("3_70bhy")]
-
-[node name="Env" parent="Main" instance=ExtResource("4_8wjh8")]
 
 [node name="UI" parent="Main" instance=ExtResource("9_mb0p6")]

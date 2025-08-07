@@ -27,6 +27,8 @@ window/size/viewport_width=600
 window/size/viewport_height=340
 window/size/mode=3
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/main_scene="uid://cosjfk1g428ea"
 
 [global_group]
 
