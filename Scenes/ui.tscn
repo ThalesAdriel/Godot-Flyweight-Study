@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbsabc3n773r0"]
+
+[ext_resource type="Script" uid="uid://byk7p8y0etgf2" path="res://Scripts/exit.gd" id="1_jxero"]
+[ext_resource type="Script" uid="uid://ctl3gh1bgb4yc" path="res://Scripts/ui.gd" id="1_qdvrb"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_qdvrb")
+
+[node name="Exit" type="Panel" parent="."]
+offset_left = 11.0
+offset_top = 14.0
+offset_right = 51.0
+offset_bottom = 54.0
+
+[node name="Button" type="Button" parent="Exit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+script = ExtResource("1_jxero")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_right = -61.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.17964, 1.04878)
+size_flags_horizontal = 4
+
+[node name="BoxContainer" type="BoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = -55.1016
+offset_right = -2.1016
+offset_bottom = 77.0
+vertical = true
+
+[node name="FpsValue" type="Label" parent="Panel/BoxContainer"]
+layout_mode = 2
+
+[node name="BulletsValue" type="Label" parent="Panel/BoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="Exit/Button" to="Exit/Button" method="_on_pressed"]

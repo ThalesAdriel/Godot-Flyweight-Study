@@ -14,5 +14,4 @@ func _process(delta: float) -> void:
 	self.position += motion
 	
 	if Global.clear:
-		print("teste")
 		queue_free()

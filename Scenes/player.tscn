@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbbedyyhwcan"]
+[gd_scene load_steps=8 format=3 uid="uid://cbbedyyhwcan"]
 
 [ext_resource type="Texture2D" uid="uid://coc8rqgjc6rpk" path="res://Textures/Duck.png" id="1_v0iea"]
-[ext_resource type="PackedScene" uid="uid://dsf1fe8dwv0nn" path="res://Scenes/gun.tscn" id="2_cvnsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")
@@ -50,5 +49,3 @@ frame_progress = 0.985428
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_f60y1")
-
-[node name="Gun" parent="." instance=ExtResource("2_cvnsp")]
