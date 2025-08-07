@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://iq77rm7pk1h"]
+[gd_scene load_steps=4 format=3 uid="uid://iq77rm7pk1h"]
 
 [ext_resource type="Script" uid="uid://cgwxqq5joq82b" path="res://Scripts/bullet.gd" id="1_oduel"]
 [ext_resource type="Texture2D" uid="uid://uikuwygri2wm" path="res://Textures/bullet.png" id="1_xjght"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oduel"]
 
 [node name="Bullet" type="Node2D" groups=["Bullet"]]
 top_level = true
@@ -11,3 +13,8 @@ sprite = ExtResource("1_xjght")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2)
 flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_oduel")
