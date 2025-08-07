@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://iq77rm7pk1h"]
+
+[ext_resource type="Script" uid="uid://cgwxqq5joq82b" path="res://Scripts/bullet.gd" id="1_oduel"]
+[ext_resource type="Texture2D" uid="uid://uikuwygri2wm" path="res://Textures/bullet.png" id="1_xjght"]
+
+[node name="Bullet" type="Node2D" groups=["Bullet"]]
+top_level = true
+script = ExtResource("1_oduel")
+sprite = ExtResource("1_xjght")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+flip_h = true

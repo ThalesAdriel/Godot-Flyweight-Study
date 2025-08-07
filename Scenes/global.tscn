@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://uu131frwkhft"]
+
+[ext_resource type="Script" uid="uid://denllbgl5tpg2" path="res://Scripts/global.gd" id="1_koean"]
+
+[node name="Global" type="Node2D"]
+script = ExtResource("1_koean")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.1, 1.1)
+limit_smoothed = true

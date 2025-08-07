@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bimt6hsm5mxve"]
+
+[ext_resource type="Script" uid="uid://dfa2c4q0edm15" path="res://Scripts/bullet_flyweight.gd" id="1_1uuy2"]
+[ext_resource type="Texture2D" uid="uid://uikuwygri2wm" path="res://Textures/bullet.png" id="2_mx5m0"]
+
+[node name="BulletFlyweight" type="Node2D"]
+script = ExtResource("1_1uuy2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mx5m0")
+flip_h = true
