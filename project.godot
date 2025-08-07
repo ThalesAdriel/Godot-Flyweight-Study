@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Flyweight"
-run/main_scene="uid://cosjfk1g428ea"
+run/main_scene="uid://bad3w8jybmjux"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Scenes/global.tscn"
 BulletFactorySingleton="*res://Scripts/flyweight/BulletFactory.gd"
+Load="*res://Scenes/loading.tscn"
 
 [display]
 
@@ -26,7 +27,6 @@ window/size/viewport_width=600
 window/size/viewport_height=340
 window/size/mode=3
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [global_group]
 

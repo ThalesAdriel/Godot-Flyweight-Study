@@ -1,4 +1,8 @@
 extends Button
 
+const MENU = ("res://Scenes/menu.tscn")
+
 func _on_pressed() -> void:
-	get_tree().quit()
+	Global.bullets = 0
+	Global.clear = true
+	Load.load(MENU)

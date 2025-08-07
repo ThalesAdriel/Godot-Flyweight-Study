@@ -1,7 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://b4torc0a8bv0i"]
+[gd_scene load_steps=27 format=3 uid="uid://b4torc0a8bv0i"]
 
 [ext_resource type="Script" uid="uid://ctl3gh1bgb4yc" path="res://Scripts/main_.gd" id="1_syscg"]
-[ext_resource type="PackedScene" uid="uid://uu131frwkhft" path="res://Scenes/global.tscn" id="2_6qqq3"]
 [ext_resource type="Texture2D" uid="uid://crdcbye20e73a" path="res://Textures/Nest.png" id="3_eytsr"]
 [ext_resource type="Texture2D" uid="uid://d2npcovwlu8if" path="res://Textures/numb.png" id="4_q1br3"]
 [ext_resource type="Shader" uid="uid://dk08qvlnwtsgk" path="res://Shaders/displace.gdshader" id="5_2v5t4"]
@@ -189,8 +188,6 @@ animations = [{
 [node name="Main" type="Node2D" parent="."]
 script = ExtResource("1_syscg")
 
-[node name="Global" parent="Main" instance=ExtResource("2_6qqq3")]
-
 [node name="Nest" type="Sprite2D" parent="Main"]
 z_index = -1
 texture = ExtResource("3_eytsr")
@@ -212,6 +209,7 @@ process_material = SubResource("ParticleProcessMaterial_8gbba")
 libraries = {
 &"": SubResource("AnimationLibrary_21xkr")
 }
+autoplay = "side_move"
 
 [node name="Numb" type="Sprite2D" parent="Main/Env"]
 material = SubResource("ShaderMaterial_21xkr")

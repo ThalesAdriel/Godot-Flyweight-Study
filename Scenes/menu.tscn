@@ -1,0 +1,107 @@
+[gd_scene load_steps=12 format=3 uid="uid://bad3w8jybmjux"]
+
+[ext_resource type="Shader" uid="uid://7vi30ad5525i" path="res://Shaders/grid.gdshader" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://cs6gw2akhuqyh" path="res://Scripts/menu.gd" id="1_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://3m1hj2lc2bh8" path="res://Textures/prop-background.svg" id="2_158mb"]
+[ext_resource type="Texture2D" uid="uid://d2npcovwlu8if" path="res://Textures/numb.png" id="3_cayip"]
+[ext_resource type="Texture2D" uid="uid://n6pcdekill1o" path="res://Textures/Rectangle 1.svg" id="5_jsrd8"]
+[ext_resource type="FontFile" uid="uid://c1bv5hlw5tukh" path="res://Font/PublicPixel.ttf" id="5_wwsa2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xhh6f"]
+shader = ExtResource("1_1rerr")
+shader_parameter/svg_texture = ExtResource("3_cayip")
+shader_parameter/size = 15.0
+shader_parameter/speed = 1.0
+shader_parameter/direction_x = 1.0
+shader_parameter/direction_y = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jsrd8"]
+texture = ExtResource("5_jsrd8")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+modulate_color = Color(0.187176, 0.187176, 0.187176, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwsa2"]
+texture = ExtResource("5_jsrd8")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbdvm"]
+texture = ExtResource("5_jsrd8")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="Theme" id="Theme_jsrd8"]
+default_font = ExtResource("5_wwsa2")
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 12
+Button/styles/hover = SubResource("StyleBoxTexture_jsrd8")
+Button/styles/normal = SubResource("StyleBoxTexture_wwsa2")
+Button/styles/pressed = SubResource("StyleBoxTexture_wbdvm")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xhh6f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_158mb")
+
+[node name="Grid" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_xhh6f")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -600.0
+offset_top = -445.0
+offset_right = 600.0
+offset_bottom = 355.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="GridContainer"]
+layout_mode = 2
+theme = SubResource("Theme_jsrd8")
+theme_override_constants/separation = 15
+vertical = true
+
+[node name="NoFlyweight" type="Button" parent="GridContainer/BoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Scene without Flyweight"
+
+[node name="WithFlyweight" type="Button" parent="GridContainer/BoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Scene with Flyweight"
+
+[node name="Exit" type="Button" parent="GridContainer/BoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Exit"
+
+[connection signal="pressed" from="GridContainer/BoxContainer/NoFlyweight" to="." method="_on_no_flyweight_pressed"]
+[connection signal="pressed" from="GridContainer/BoxContainer/WithFlyweight" to="." method="_on_with_flyweight_pressed"]
+[connection signal="pressed" from="GridContainer/BoxContainer/Exit" to="." method="_on_exit_pressed"]
