@@ -18,5 +18,4 @@ func _process(delta: float) -> void:
 	sprite_2d.texture = self.sprite
 	self.position += motion
 	if Global.clear:
-		print("teste")
 		queue_free()
