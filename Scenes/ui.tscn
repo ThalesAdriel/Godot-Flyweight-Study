@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbsabc3n773r0"]
+[gd_scene load_steps=4 format=3 uid="uid://bbsabc3n773r0"]
 
 [ext_resource type="Script" uid="uid://byk7p8y0etgf2" path="res://Scripts/exit.gd" id="1_jxero"]
 [ext_resource type="Script" uid="uid://ctl3gh1bgb4yc" path="res://Scripts/ui.gd" id="1_qdvrb"]
+[ext_resource type="Theme" uid="uid://ot3iqkyfukxx" path="res://Textures/theme.tres" id="3_nf4gj"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_qdvrb")
@@ -27,24 +28,28 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -61.0
-offset_right = -61.0
+offset_left = -120.0
+offset_right = -120.0
+offset_bottom = -340.0
 grow_horizontal = 0
 grow_vertical = 2
-scale = Vector2(1.17964, 1.04878)
 size_flags_horizontal = 4
 
 [node name="BoxContainer" type="BoxContainer" parent="Panel"]
 layout_mode = 0
-offset_left = -55.1016
-offset_right = -2.1016
+offset_left = -106.812
+offset_right = -53.8123
 offset_bottom = 77.0
+theme = ExtResource("3_nf4gj")
 vertical = true
 
 [node name="FpsValue" type="Label" parent="Panel/BoxContainer"]
 layout_mode = 2
 
 [node name="BulletsValue" type="Label" parent="Panel/BoxContainer"]
+layout_mode = 2
+
+[node name="MemoryValue" type="Label" parent="Panel/BoxContainer"]
 layout_mode = 2
 
 [connection signal="pressed" from="Exit/Button" to="Exit/Button" method="_on_pressed"]
